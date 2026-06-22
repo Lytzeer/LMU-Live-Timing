@@ -1,0 +1,3 @@
+[submodule "bridge/pyLMUSharedMemory"]
+	path = bridge/pyLMUSharedMemory
+	url = https://github.com/TinyPedal/pyLMUSharedMemory.git
