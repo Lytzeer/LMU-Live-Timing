@@ -74,5 +74,6 @@ def serialize_session(snapshot) -> SessionState:
         raining=round(info.mRaining, 3),
         track_temp=round(info.mTrackTemp, 1),
         track_grip=info.mTrackGripLevel,
+        sector_flags=list(info.mSectorFlag),
         drivers=drivers,
     )

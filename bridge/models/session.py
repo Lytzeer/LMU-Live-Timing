@@ -12,4 +12,5 @@ class SessionState:
     raining: float
     track_temp: float
     track_grip: int
+    sector_flags: List[int]
     drivers: List[DriverInfo]

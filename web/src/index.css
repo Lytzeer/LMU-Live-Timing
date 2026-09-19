@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -11,8 +13,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -51,15 +53,12 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
+  width: 100%;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background: linear-gradient(160deg, #0d1230 0%, #080b1e 45%, #050710 100%);
 }
 
 body {
@@ -109,3 +108,28 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+@keyframes flash-green {
+  0% { background-color: rgba(61, 220, 132, 0.35); }
+  100% { background-color: transparent; }
+}
+@keyframes flash-red {
+  0% { background-color: rgba(255, 59, 48, 0.35); }
+  100% { background-color: transparent; }
+}
+@keyframes flash-gold {
+  0% { background-color: rgba(255, 214, 10, 0.4); }
+  100% { background-color: transparent; }
+}
+@keyframes pop-fade {
+  0% { opacity: 0; transform: scale(0.5) translateY(3px); }
+  20% { opacity: 1; transform: scale(1.15) translateY(0); }
+  35% { transform: scale(1); }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.flash-green { animation: flash-green 1.5s ease-out; }
+.flash-red { animation: flash-red 1.5s ease-out; }
+.flash-gold { animation: flash-gold 1.8s ease-out; }
+.pop-fade { animation: pop-fade 1.5s ease-out forwards; }
